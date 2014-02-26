@@ -1,0 +1,25 @@
+{
+  "name": "homepage",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Kazunori-Kimura/user-page.git"
+  },
+  "keywords": [
+    "homepage",
+    "userpage"
+  ],
+  "author": "kazunori.kimura.js@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kazunori-Kimura/user-page/issues"
+  },
+  "devDependencies": {
+    "connect": "~2.13.0"
+  }
+}
