@@ -36,5 +36,8 @@ build
 .grunt
 
 node_modules
+bower_components
 
+# customize for this project
+html
 

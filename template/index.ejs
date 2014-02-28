@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="kazunori.kimura">
+
+    <title>kazunori.kimura</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>kazunori.kimura</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="page-header">
+            <h3>node-gi</h3>
+          </div>
+          <p>Create .gitignore files for your project.</p>
+          <p>.gitignoreファイルをコマンドラインで生成します。 <a href="http://www.gitignore.io" target="_blank">www.gitignore.io <span class="glyphicon glyphicon-new-window"></span></a> のAPIをラッピングしています。</p>
+          <a href="https://github.com/Kazunori-Kimura/node-gi" class="btn btn-primary">more</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="page-header">
+            <h3>メモ書き</h3>
+          </div>
+          <ul>
+            <% titles.forEach(function(title){ %>
+            <li><a href="<%- posts[title].name %>"><%= title %></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">
+          <a href="https://github.com/Kazunori-Kimura" target="_blank">Github <span class="glyphicon glyphicon-new-window"></span></a> |
+          <a href="http://kazunori-kimura.blogspot.jp/" target="_blank">blog <span class="glyphicon glyphicon-new-window"></span></a>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>

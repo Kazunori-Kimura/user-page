@@ -21,5 +21,11 @@
   },
   "devDependencies": {
     "connect": "~2.13.0"
+  },
+  "dependencies": {
+    "marked": "~0.3.1",
+    "highlight.js": "~8.0.0",
+    "ejs": "~0.8.5",
+    "q": "~1.0.0"
   }
 }
