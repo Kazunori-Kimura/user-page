@@ -3,7 +3,6 @@ var fs = require("fs"),
     path = require("path"),
     util = require("util"),
     marked = require("marked"),
-    highlight = require('highlight.js'),
     ejs = require("ejs"),
     Q = require("q"),
     crypto = require('crypto');
@@ -14,11 +13,11 @@ Q.fcall(function(){
     //markdownのコード装飾にhighlight.jsを使用する
     marked.setOptions({
         highlight: function (code) {
-            return highlight.highlightAuto(code).value;
+            return require('highlight.js').highlightAuto(code).value;
         }
     });
 
-    //一旦htmlを全削除
+    //htmlを全削除
     Q.nfcall(fs.readdir, "html").then(function(files){
         files.forEach(function(file){
             if(/\.html$/i.test(file)){
@@ -52,10 +51,8 @@ Q.fcall(function(){
             var html = {};
             //ファイル名
             var hash = crypto.createHash("md5");
-            hash.update(item.replace(/\.md$/i, ""), "utf8");
-            html.name = util.format("%d_%s.html",
-                st.mtime.getTime(),
-                hash.digest("hex"));
+            hash.update(item, "utf8");
+            html.name = util.format("%s.html", hash.digest("hex"));
             //markdown -> html
             html.body = marked(fs.readFileSync(fp, {encoding: "utf-8"}));
 
@@ -70,7 +67,6 @@ Q.fcall(function(){
 }).then(function(entries){
     //-----------------------------
     //htmlを作成
-    //console.log(entries);
 
     //titleをソートしておく
     entries.titles = entries.titles.sort().reverse(); //日付降順
