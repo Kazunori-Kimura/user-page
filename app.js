@@ -17,6 +17,15 @@ Q.fcall(function(){
             return highlight.highlightAuto(code).value;
         }
     });
+
+    //一旦htmlを全削除
+    Q.nfcall(fs.readdir, "html").then(function(files){
+        files.forEach(function(file){
+            if(/\.html$/i.test(file)){
+                fs.unlink(path.join("html", file));
+            }
+        });
+    });
 }).then(function(){
     //-------------------------------
     //markdownファイルをhtmlに変換
@@ -61,7 +70,7 @@ Q.fcall(function(){
 }).then(function(entries){
     //-----------------------------
     //htmlを作成
-    console.log(entries);
+    //console.log(entries);
 
     //titleをソートしておく
     entries.titles = entries.titles.sort().reverse(); //日付降順
