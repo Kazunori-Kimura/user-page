@@ -4,8 +4,7 @@ var fs = require("fs"),
     util = require("util"),
     marked = require("marked"),
     ejs = require("ejs"),
-    Q = require("q"),
-    crypto = require('crypto');
+    Q = require("q");
 
 
 Q.fcall(function(){
@@ -50,9 +49,8 @@ Q.fcall(function(){
             //html
             var html = {};
             //ファイル名
-            var hash = crypto.createHash("md5");
-            hash.update(item, "utf8");
-            html.name = util.format("%s.html", hash.digest("hex"));
+            var id = data.titles.length + 1;
+            html.name = util.format("%s.html", ("000" + id).slice(-3));
             //markdown -> html
             html.body = marked(fs.readFileSync(fp, {encoding: "utf-8"}));
 
